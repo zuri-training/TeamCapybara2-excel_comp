@@ -11,7 +11,6 @@ A platform that helps users compare the content of excel files
 - [Process](#process) 
     - [Technology/tools adopted](#technology) 
     - [Status](#status) 
-    - [Resources](#resources) 
 - [Contributors](#contributors) 
 - [Acknowledgments](#acknowledgments) 
   
@@ -99,13 +98,23 @@ A platform that helps users compare the content of excel files
  Project is currently ongoing. 
   
   
-### Resources 
-  
-- [w3schools](https://www.w3schools.com) 
-- [stackoverflow](https://www.stackoverflow.com) 
-- [YouTube](https://www.youtube.com) 
-  
-## Contributors  
- ` compiling...`
+## Contributors
+ - [Ismail Akintunde](https://github.com/Homoakin619)
+ - [Oyeledun Jesulofunmilola](https://github.com/jesulofunmilola)
+ - [Anine Eloho Endurance](https://github.com/Taikyu)
+ - [Abdulazeez Gunu](https://github.com/Abdlazeezz)
+ - [Ijeoma Agobi](https://github.com/fremdie)
+ - [Segun Adeogun](https://github.com/SegunAdeogun)
+ - [Ateiza Samuel ](https://github.com/Klintsammi)
+ - [Muftanatu Gomina](https://github.com/Muftanatu)
+ - [Collins Tonui](https://github.com/tckiprotich)
+ - [Sheena M. A. Chombe](https://github.com/Sheedesign)
+ - [Omoruyi victor](https://github.com/vickde)
+ - [Ekata Omoijuanfo](https://github.com/katazulu)
+ - [Jeremiah Miracle Ijeoma](https://github.com/DocMimi)
+ - [Samuel Ademujimi](https://github.com/sam-shot)
+ - [Olukoya Deborah Blessing](https://github.com/Olukoya-Deborah-Blessing)
+ - [Ejiofor Chisom](https://github.com/Beeblossom)
+
 
 ## Acknowledgments
