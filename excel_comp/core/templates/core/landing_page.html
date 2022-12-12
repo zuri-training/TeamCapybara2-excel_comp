@@ -1,0 +1,90 @@
+{% extends 'core/base_file.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/landing.css' %}">
+<style>
+  .page-container {
+    padding: 0;
+  }
+</style>
+{% endblock %}}
+
+{% block content %}
+<main class="page-container">
+  <!-- FLEX CONTAINER -->
+  <div class="container">
+
+    <div class="hero-1">
+      <h1 class="heading">Welcome to Excel_comp</h1>
+      <p class="para">A platform that helps users compare the content of Excel files! With our intuitive interface and
+        powerful tools, you can easily compare Excel files and see the duplicates in them.</p>
+      <div class="btn-div">
+        <a href="{% url 'login' %}" class="button">Get Started<img class="arrow"
+            src="{% static 'core/images/arrow-right.svg' %}" alt=""></a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="{% static 'core/images/image.svg' %}" alt="" class="img">
+    </div>
+  </div>
+  </section>
+
+  <section>
+    <!-- ANOTHER FLEX CONTAINER -->
+    <div class="container">
+      <div class="hero-1">
+        <h2 class="heading">Fast and Easy to Use</h2>
+        <p class="para">With our platform, you can quickly compare the content of excel files, see a clear visual
+          representation of the duplicates in the files, easily spot any discrepancies or changes in the data amd export
+          the comparisons results to a new Excel file.
+          Our platform is user friendly and easy to use. Try it out today.
+        </p>
+        <div class="btn-div">
+          <a href="{% url 'login' %}" class="button">Try now&nbsp;&nbsp;&nbsp;&nbsp; <img class="arrow"
+              src="{% static 'core/images/arrow-right.svg' %}"></a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="{% static 'core/images/image2.svg' %}" alt="" class="img">
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <!-- FLEX AGAIN! -->
+    <div class="container">
+      <div class="hero-1">
+        <h2 class="heading">Makes Teamwork Easier</h2>
+        <p class="para">Working on a team project and need to track changes to a shared spreadsheet? Or you are trying
+          to merge data form multiple sources? Our platform is the right place to use as it is easy to compare Excel
+          files and identify any discrepancies.</p>
+        <div class="btn-div">
+          <a href="{% url 'login' %}" class="button">Try now&nbsp;&nbsp;&nbsp;&nbsp; <img class="arrow"
+              src="{% static 'core/images/arrow-right.svg' %}"></a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="{% static 'core/images/image3.svg' %}" alt="" class="img">
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="newsletter">
+      <h2 class="join">Join our newsletter now!</h2>
+      <p class="join-para">Get our latest offers</p>
+
+      <div>
+        <form action="#" class="newsletter-form">
+          <input type="email" id="email" name="email" placeholder="Your Best Email" required>
+          <span id="error-text"></span>
+          <button class="join-btn">Join</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}
