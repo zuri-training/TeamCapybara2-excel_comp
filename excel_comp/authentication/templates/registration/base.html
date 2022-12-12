@@ -5,12 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel_Comp</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    {% block extra_css %} 
+
+    {% endblock %}
 </head>
 <body>
-    {% includes 'core/header.html' %}
+    {% include 'registration/header.html' %}
+
     {% block content %} 
 
     {% endblock %}
+    {% include 'registration/footer.html' %}
     
 </body>
 </html>

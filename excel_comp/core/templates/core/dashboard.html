@@ -1,0 +1,38 @@
+{% extends 'core/base_file.html' %}
+{% load static %}
+
+
+{% block content %} 
+<main class="page-container">
+    <div id="head">
+        <div id="image1"> <img src="{% static 'images/Excel_Comp.png' %}"  alt=""></div>
+        <div id="ease">Duplicate with ease</div>
+        <div id="image2">  <img src="{% static 'images/vector1.png' %}"  alt=""></div>
+       
+    </div>
+    
+    <div style="margin: auto; width: 40%;padding: 20px 0;">
+        <span  >know your duplicate errors very fast </span>
+    </div>
+
+    <form id="form" action="">    
+        <div id="span">
+            <span> Upload XLS/CSV File</span>
+        </div>
+        
+        <div id="body">
+            <input type="file" name="" id="upload">
+            <label for="upload"><img src="{% static 'images/vector22.png' %}" alt=""></label>
+            </div>
+
+    </form>
+
+    <div style="padding-bottom: 30px;">
+      <h3>Note</h3>
+      <ul>
+        <li>Drag and drop files here or click on the above field to upload a document from your computer</li>
+        <li>Only Excel(.xls, .xlsx, .xlsxm, .csv) documents are accepted</li>
+      </ul>
+    </div>
+</main>
+{% endblock %}

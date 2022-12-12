@@ -22,7 +22,7 @@ def validate_otp(user,otp):
 
 
 class RegisterView(generic.View):
-    template_name = 'authentication/index.html'
+    template_name = 'registration/signup.html'
     def get(self,request,*args,**kwargs):
         form = UserRegistrationForm()
         context = {'form':form}
@@ -61,7 +61,7 @@ class AccountValidationView(generic.View):
 
 
 class LoginView(generic.View):
-    template_name = 'authentication/index.html'
+    template_name = 'registration/login.html'
     def get(self,request,*args,**kwargs):
         form = AuthenticationForm()
         context = {'form':form}

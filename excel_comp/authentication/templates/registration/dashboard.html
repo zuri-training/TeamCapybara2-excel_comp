@@ -1,0 +1,91 @@
+{% extends 'registration/base.html' %}
+
+{% block extra_css %} 
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+{% endblock %}
+
+{% block extra_css %} 
+<style>
+  #ease{
+    
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    color: 
+    #04045E;
+        
+      }
+      #head{
+          text-align: center;
+      }
+    
+      #upload {
+        display: none;
+      }
+      #form{
+        background-color:blue;
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        border-radius: 6px;
+        min-height: 50px;
+        /*justify-content: center;*/
+        
+      }
+      #span{
+        display: flex;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        color: #f2f2f2;
+    
+      }
+       #body{
+         background-color:  #FFFFFF;
+         width: 20%;
+         border-radius: 5px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+       }
+    
+    #body img {
+      width: 20px;
+      height: 20px
+    }
+    
+</style>
+{% endblock %}
+
+{% block content %} 
+<main class="page-container">
+    <div id="head">
+        <div id="image1"> <img src="{% static 'images/Excel_Comp.png' %}"  alt=""></div>
+        <div id="ease">Duplicate with ease</div>
+        <div id="image2">  <img src="{% static 'images/vector1.png' %}"  alt=""></div>
+       
+    </div>
+    <div>
+        <span>know your duplicate errors very fast </span>
+    </div>
+
+    <form id="form" action="">    
+        <div id="span">
+            <span> Upload XML/CSV File</span>
+        </div>
+        
+        <div id="body">
+            <input type="file" name="" id="upload">
+            <label for="upload"><img src="{% static 'images/vector22.png' %}" alt=""></label>
+            </div>
+
+    </form>
+</main>
+{% endblock %}
