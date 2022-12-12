@@ -34,23 +34,7 @@ body {
 .hero-logo {
   text-align: center;
 }
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  padding: 0 1.5rem 0 1.5rem;
-  margin-top: 2.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  border-bottom: 1px solid var(--darkBlue);
-}
-.hero-1 {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 8rem;
-  
-}
+
 .heading {
   max-width: 28rem;
   font-weight: bold;
@@ -59,12 +43,7 @@ body {
   font-size: 20px;
   line-height: 2rem;
 }
-.para {
-  /* max-width: ; */
-  color: var(--darkBlue);
-  text-align: center;
-  line-height: 1.5;
-}
+
 .btn-div {
   display: flex;
   justify-content: center;
@@ -258,30 +237,7 @@ margin: 1rem 0;
     justify-content: space-between;
     margin-top: 0;
   }
-  .hero-1 {
-    width: 50%;
-    margin-top: 2.5rem;
-    padding: 2.5rem 2rem;
-  }
-  .heading {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    text-align: left;
-  }
-  .para {
-    text-align: left;
-  }
-  .btn-div {
-    justify-content: start;
-  }
-  .hero-img {
-    width: 50%;
-    margin: 0 2rem 0 5rem;
-    text-align: center;
-  }
-  .img {
-    width: 21rem;
-  }
+  
   .newsletter {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -390,6 +346,7 @@ nav {
 }
 .nav-btns a{
     font-family: Montserrat;
+    text-decoration: none;
     padding: 10px 20px;
     border: 1px solid;
     border-radius: 8px;

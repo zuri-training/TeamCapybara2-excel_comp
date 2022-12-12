@@ -85,6 +85,7 @@ nav {
 }
 .nav-btns a{
     font-family: Montserrat;
+    text-decoration: none;
     padding: 10px 20px;
     border: 1px solid;
     border-radius: 8px;
@@ -234,3 +235,4 @@ footer {
   .page-container {
       color: var(--darkBlue);
   }
+
