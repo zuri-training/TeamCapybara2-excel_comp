@@ -1,15 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends 'registration/base.html' %}
 
-</head>
 
-<body>
-<form action="" method="post">
+{% block content %} 
+<main class="page-container">
+<section>
+    <div>
+      <img src="" alt="">
+    </div>
+    <div class="signin-box">
+      <form action="#">
+        <legend class="legend">Don't Have An Account? <span class="create-now">Create Now.</span></legend>
+          <input type="email" id="signin-email" name="email" placeholder="Email :" required> <br>
+          <input type="password" id="signin-pwd" name="pwd" placeholder="Password :" required>
+        <br>
+        <span class="forgot-pwd">Forgot password? <a href="#">click here</a></span>
+    
+        <div class="btn-box">
+          <button id="btn1">Sign in</button>
+          <a href="{% url 'register' %}" id="btn2">Sign up</a>
+        </div>
+      </form>
+    
+
+    </div>
+  </section>
+</main>
+{% endblock %}
+<!-- <form action="" method="post">
     {% csrf_token %} 
     
     {{ form.as_p }}
@@ -20,4 +37,4 @@
     {{ form.errors }}
 {% endif %}
 </body>
-</html>
+</html> -->

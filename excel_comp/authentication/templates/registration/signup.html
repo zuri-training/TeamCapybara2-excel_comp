@@ -1,0 +1,40 @@
+{% extends 'registration/base.html' %}
+
+{% block extra_css %} 
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+{% endblock %}
+
+{% block content %} 
+<main class="page-container">
+<section>
+    <div>
+      <img src="" alt="">
+    </div>
+    <div class="signup-box">
+      <form action="" method="POST">
+          {% csrf_token %}
+        <div class="form-container">
+            <legend class="legend">Don't Have An Account? <span class="create-now">Create Now.</span></legend>
+            <input type="email" id="signin-email" name="email" placeholder="Email :" required> 
+            <input type="password" id="signin-pwd" name="password1" placeholder="Password :" required>
+            <input type="password" id="signin-pwd" name="password2" placeholder="Confirm Password :" required>
+            
+            <span class="forgot-pwd">Forgot password? <a href="#">click here</a></span>
+        
+            <div class="btn-box">
+            <a href="{% url 'login' %}" id="btn1">Sign in</a>
+            <button  id="btn2">Sign up</button>
+            </div>
+        </div>
+      </form>
+    
+
+    </div>
+  </section>
+</main>
+{% endblock %}
