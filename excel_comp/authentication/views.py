@@ -75,7 +75,7 @@ class LoginView(generic.View):
             user = authenticate(username=username,password=password)
             if user is not None:
                 login(request,user)
-                return HttpResponseRedirect(reverse('email_validation'))
+                return HttpResponseRedirect(reverse('dashboard'))
             else:
                 return render(request,self.template_name,context)
         else:
@@ -94,7 +94,7 @@ class PasswordResetView(generic.View):
         form = PasswordResetForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('home'))
+            return HttpResponseRedirect(reverse('login'))
         else:
             print(form.errors)
             print('Form failed validations')
