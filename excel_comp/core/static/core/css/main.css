@@ -111,12 +111,12 @@ nav {
     color: rgb(207, 241, 249);
 }
 
-main {
+/* main {
     padding: 8% 17% 0;
-}
-section {
+} */
+/* section {
     padding-top: 6%;
-}
+} */
 
 /* ul {
     list-style: none;
@@ -203,11 +203,16 @@ footer {
   margin: auto;
   background-color: #04045E;
   display: flex;
-  flex-direction: row;
-  width: 40%;
+  flex-wrap: wrap;
   border-radius: 15px;
   min-height: 80px;
 }
+
+#upload-form {
+    width: 40%;
+    margin: auto;
+}
+
 #span{
   display: flex;
   width: 75%;
