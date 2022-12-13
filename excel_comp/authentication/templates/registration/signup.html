@@ -16,14 +16,16 @@
       <img src="" alt="">
     </div>
     <div class="signup-box">
-      <form action="" method="POST">
+      <form method="POST">
           {% csrf_token %}
         <div class="form-container">
             <legend class="legend">Don't Have An Account? <span class="create-now">Create Now.</span></legend>
-            <input type="email" id="signin-email" name="email" placeholder="Email :" required> 
-            <input type="password" id="signin-pwd" name="password1" placeholder="Password :" required>
-            <input type="password" id="signin-pwd" name="password2" placeholder="Confirm Password :" required>
             
+            {{ form.username }}
+            {{ form.email }}
+            {{ form.password1 }}
+            {{ form.password2 }}
+            {{ request.user }}
             <span class="forgot-pwd">Forgot password? <a href="#">click here</a></span>
         
             <div class="btn-box">

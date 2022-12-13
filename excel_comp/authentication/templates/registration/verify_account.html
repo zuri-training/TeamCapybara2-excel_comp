@@ -1,0 +1,21 @@
+{% extends 'registration/base.html' %}
+
+{% block extra_css %} 
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+{% endblock %}
+
+{% block content %} 
+<main class="page-container">
+<form action="" method="post">
+    {% csrf_token %} 
+    
+    <input type="text" name="otp" placeholder="Enter OTP"/>
+    <input type="submit" value="Verify">
+</form>
+</main>
+{% endblock %}

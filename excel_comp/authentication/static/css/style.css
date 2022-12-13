@@ -117,7 +117,7 @@ form input {
   padding: 0.5rem 0.5rem;
   outline: none;
 }
-#signin-pwd::placeholder, #signin-email::placeholder {
+#signin-pwd::placeholder, #signin-email::placeholder{
   color: var(--darkBlue);
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
