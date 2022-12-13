@@ -4,12 +4,20 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.forms import PasswordResetForm,AuthenticationForm
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 
 
 from authentication.models import Profile
 from authentication.forms import UserRegistrationForm
 
+import random
+import string
+
+def generate_otp():
+    new_otp = ""
+    for i in range(6):
+        new_otp += "".join(random.choice(string.digits))
+    return new_otp
 
 def validate_otp(user,otp):
     user = get_object_or_404(User,id=user)
@@ -32,21 +40,16 @@ class RegisterView(generic.View):
         form = UserRegistrationForm(request.POST)
         context = {'form':form}
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username,password=password)
-            if user is not None:
-                login(request,user)
-                return HttpResponseRedirect(reverse('account_validation'))
-            else:
-                return render(request,self.template_name,context)
+            user = form.save()
+            login(request,user)
+            return HttpResponseRedirect(reverse('verify_account'))
         else:
+            print(form.errors)
             return render(request,self.template_name,context)
            
 
 class AccountValidationView(generic.View):
-    template_name = 'authentication/validate_email.html'
+    template_name = 'registration/verify_account.html'
     def get(self,request,*args,**kwargs):
         
         return render(request,self.template_name)
@@ -69,17 +72,16 @@ class LoginView(generic.View):
 
     def post(self,request,*args,**kwargs):
         form = AuthenticationForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username,password=password)
-            if user is not None:
-                login(request,user)
-                return HttpResponseRedirect(reverse('dashboard'))
-            else:
-                return render(request,self.template_name,context)
+        context = {'form':form}
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request,username=username,password=password)
+        if user is not None:
+            print('I am in')
+            login(request,user)
+            return HttpResponseRedirect(reverse('dashboard'))
         else:
-            context = {'form':form}
+            print('None User')
             return render(request,self.template_name,context)
 
 
@@ -100,3 +102,7 @@ class PasswordResetView(generic.View):
             print('Form failed validations')
         context = {'form':form}
         return render(request,self.template_name,context)
+
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect('/')

@@ -8,12 +8,16 @@
       <img src="" alt="">
     </div>
     <div class="signin-box">
-      <form action="#">
+      <form method="POST">
+        {% csrf_token %} 
+        
         <legend class="legend">Don't Have An Account? <span class="create-now">Create Now.</span></legend>
-          <input type="email" id="signin-email" name="email" placeholder="Email :" required> <br>
+          <input type="text" id="signin-email" name="username" placeholder="username :" required> <br>
           <input type="password" id="signin-pwd" name="pwd" placeholder="Password :" required>
+
         <br>
-        <span class="forgot-pwd">Forgot password? <a href="#">click here</a></span>
+      {{ request.user.username }}
+        <span class="forgot-pwd">Forgot password? <a href="{% url 'dashboard' %}">click here</a></span>
     
         <div class="btn-box">
           <button id="btn1">Sign in</button>
