@@ -1,0 +1,1 @@
+web: gunicorn excel_comp.wsgi
