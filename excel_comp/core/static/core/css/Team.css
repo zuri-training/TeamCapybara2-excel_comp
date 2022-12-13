@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(202,240,248,0.9);
+    color: #04045E;
+
+}
+
+body{
+    font-family:'Open Sans', sans-serif;
+    font-weight:400;
+    font-size: 16px;
+}
+
+main{
+    min-height: 100vh;
+}
+main h2{
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+.first-row,.second-row,.third-row,.fourth-row, .fifth-row, .sixth-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+.meet_team_item{
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+.meet_team_item img{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    object-fit:contain;
+}
+@media screen and (max-width:375px) {
+    .column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+    .first-row,.second-row,.third-row,.fourth-row, .fifth-row, .sixth-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    }
+}
