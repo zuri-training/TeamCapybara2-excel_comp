@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --darkBlue: rgba(3, 4, 94, 100%);
+  --lightBlue: rgba(0, 119, 182, 100%);
+  --lighterBlue: rgba(0, 180, 216, 100%);
+  --bg: rgba(144, 224, 239, 100%);
+  --supLightBlue: rgba(202, 240, 248, 100%);
+  --color6: rgba(6, 33, 59, 100%);
+  --color7: rgba(49, 57, 251, 100%);
+  --grey: rgba(93, 92, 92, 100%);
+  --white: rgba(255, 255, 255, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  background-color: var(--bg);
+  /* margin: auto 2rem; */
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url('../static/fonts/Montserrat-Regular.ttf');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Regular.ttf');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url('../static/fonts/Montserrat-Bold.ttf');
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url('../static/fonts/Montserrat-SemiBold.ttf');
+    font-style: normal;
+    font-weight: 500;
+}
+
+.page-container {
+    min-height: 50vh;
+}
+
+p {
+    line-height: 22px;
+    font-family: 'Open Sans';
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5% 10px;
+    border-bottom: 1px solid #04045E;
+}
+#brand_color {
+    color: #00B4D8;
+}
+
+.navigations,.nav-btns {
+    display: flex;
+    gap: 45px;
+}
+
+.navigations a {
+    text-decoration: none;
+    color: #000;
+}
+.nav-btns {
+    gap: 10px;
+}
+.nav-btns a{
+    font-family: Montserrat;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#btn-1 {
+    border-color: #04045E;
+    color: #04045E;
+}
+#btn-1:hover {
+    background: rgb(159, 230, 247);
+    color: rgb(216, 244, 250);
+}
+
+#btn-2 {
+    background-color: #04045E;
+    color: rgb(207, 241, 249);
+    /* text-decoration: none; */
+}
+
+#btn-2:hover {
+    background: #010122;
+    color: rgb(207, 241, 249);
+}
+
+/* main {
+    padding: 8% 17% 0;
+} */
+/* section {
+    padding-top: 6%;
+} */
+
+/* ul {
+    list-style: none;
+} */
+
+li {
+    padding: 10px 0;
+}
+
+/* ul li::before {
+    content: "\2022";
+    color: #04045E;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-top: 5px;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+} */
+
+.center {
+    text-align: center;
+}
+
+.heading {
+    font-weight: 500;
+    padding: 30px 0 15px;
+}
+
+.header {
+    padding: 0;
+    font-weight: 500;
+}
+
+footer {
+    margin-top: 30px;
+    display: flex;
+    padding: 3% 5% 5% ;
+    border-top: 1px solid #04045E;
+}
+
+.right {
+    margin-left: 7%;
+    display: flex;
+    flex-direction: column;
+}
+.right span {
+    padding-top: 20px;
+    font-weight: 500;
+}
+
+.right h3 {
+    font-weight: bold;
+}
+
+#footer-hero {
+    width: 45%;
+    padding-top: 30px;
+}
+
+#footer-hero h1 {
+    font-size: 2.5em;
+}
+
+#ease{
+    
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  color: 
+  #04045E;      
+}
+
+#head{
+    text-align: center;
+}
+  
+#upload {
+  display: none;
+}
+#form{
+  margin: auto;
+  background-color: #04045E;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  min-height: 80px;
+}
+
+#upload-form {
+    width: 40%;
+    margin: auto;
+}
+
+#span{
+  display: flex;
+  width: 75%;
+  align-items: center;
+  justify-content: center;
+  color: #f2f2f2;
+
+}
+  #body{
+    background-color:  #FFFFFF;
+    cursor: pointer;
+    width: 25%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #body img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .page-container {
+      color: var(--darkBlue);
+  }
+
