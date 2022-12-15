@@ -1,6 +1,15 @@
 {% extends 'core/base_file.html' %}
 {% load static %}
 
+{% block extra_css %} 
+
+<style>
+    .page-container {
+        padding: 0 15%;
+    }
+</style>
+{% endblock %}
+
 
 {% block content %} 
 <main class="page-container">
@@ -15,16 +24,21 @@
         <span  >know your duplicate errors very fast </span>
     </div>
 
-    <form id="form" action="">    
-        <div id="span">
-            <span> Upload XLS/CSV File</span>
-        </div>
+    <form id="upload-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} 
         
-        <div id="body">
-            <input type="file" name="" id="upload">
-            <label for="upload"><img src="{% static 'images/vector22.png' %}" alt=""></label>
+        <section id="form">    
+            <div id="span">
+                <span> Upload XLS/CSV File</span>
             </div>
-
+            
+            <div id="body" >
+                <input type="file" name="excel_file" id="upload">
+                <label for="upload"><img src="{% static 'images/vector22.png' %}" alt=""></label>
+            </div>
+            
+        </section>
+        <input type="submit" id="btn-2" style="padding: 10px 18px; margin-top: 10px;" value="Run Process">
     </form>
 
     <div style="padding-bottom: 30px;">

@@ -2,10 +2,13 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'core/css/landing.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/landing-page.css' %}">
 <style>
   .page-container {
     padding: 0;
+  }
+  section:not(:last-of-type) {
+    border-bottom: 1px solid rgba(3, 4, 94, 100%);
   }
 </style>
 {% endblock %}}
@@ -13,6 +16,7 @@
 {% block content %}
 <main class="page-container">
   <!-- FLEX CONTAINER -->
+  <section>
   <div class="container">
 
     <div class="hero-1">
