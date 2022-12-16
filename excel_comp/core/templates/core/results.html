@@ -60,18 +60,18 @@
       
       <div class="di1">
         <div>
-          <a id="download"><button class="download">Single document, duplicates highlighted</button></a
+          <a id="download"><button class="download">Single document duplicates highlighted</button></a
           >
         </div>
 
-        <div>
+        <!-- <div>
           <a href="#"><button class="download">Two document, duplicates removed</button></a>
-        </div>
+        </div> -->
       </div>
 
       <div class="di2">
 
-        <div>
+        <!-- <div>
           <a href=""
             download><button class="download">Single documents, duplicates highlighted</button></a
           >
@@ -79,7 +79,7 @@
 
         <div>
           <a href="#" download><button class="download">Two documents, duplicates removed</button></a>
-        </div>
+        </div> -->
 
       </div>
 
@@ -96,7 +96,10 @@
 
 <!-- use xlsx.full.min.js from version 0.19.1 -->
 <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.19.1/package/dist/xlsx.full.min.js"></script>
-<script>  
+<script src="https://unpkg.com/x-data-spreadsheet/dist/xspreadsheet.js"></script>
+<script src="https://cdn.sheetjs.com/xspreadsheet/xlsxspread.js"></script>
+
+<script type="module">  
   const options = {
         mode: 'read', // edit | read
         showToolbar: false,
@@ -172,8 +175,8 @@ const myData = [{
 { name: 'sheet-test' }
 ]
 
-  const s = x_spreadsheet(document.getElementById("example"),options)
-  .loadData(myData) // load data
+  const s = x_spreadsheet(document.getElementById("example"),options);
+  s.loadData(myData) // load data
 
   const dup_data = JSON.parse("{{ duplicates|safe|escapejs }}")
   
@@ -202,24 +205,25 @@ const myData = [{
   const s1 = x_spreadsheet(document.getElementById("example1"),options)
   .loadData(myData1) // load data
 
-</script>
-<script type="module">
-   import { read, writeFileXLSX } from "https://cdn.sheetjs.com/xlsx-0.19.1/package/xlsx.mjs";
-  const data = JSON.parse("{{ original|safe|escapejs }}")
-  console.log(typeof data)
-  console.log(data)
-  var workbook = XLSX.utils.book_new();
-  const worksheet = XLSX.utils.aoa_to_sheet(data);
-  
-  XLSX.utils.book_append_sheet(workbook, worksheet, "Dates");
 
-  var download = document.getElementById('download')
+  import { read, writeFileXLSX } from "https://cdn.sheetjs.com/xlsx-0.19.1/package/xlsx.mjs";
+  // const data = JSON.parse("{{ original|safe|escapejs }}")
+  // console.log(typeof data)
+  // console.log(data)
+  // var workbook = XLSX.utils.book_new();
+  // const worksheet = XLSX.utils.aoa_to_sheet(data);
+  
+  // XLSX.utils.book_append_sheet(workbook, worksheet, "Dates");
+
+  // var download = document.getElementById('download')
 
   download.addEventListener("click",() => {
-    console.log(typeof data)
-    XLSX.writeFile(workbook, "result.xlsx", { compression: true });
+    // console.log(typeof data)
+    // XLSX.writeFile(workbook, "result.xlsx", { compression: true });
+    XLSX.writeFile(xtos(s.getData()), "result.xlsx");
   } )
- 
-  
+    /* build workbook from the grid data */
+
 </script>
+
 {% endblock %}
