@@ -19,7 +19,6 @@ def send_otp_mail(recipient,code):
 @receiver(post_save,sender=User)
 def create_profile(sender,instance,created,**kwargs):
     if created:
-        print(instance.email)
         user_otp = generate_otp()
         profile = Profile.objects.create(user=instance,otp=user_otp)
         profile.save()

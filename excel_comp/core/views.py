@@ -36,9 +36,9 @@ class HomepageView(generic.View):
 
         return render(request,self.template_name)
 
-class DashboardView(generic.View):
+class DashboardView(LoginRequiredMixin,CheckVerificationMixin,generic.View):
     template_name = 'core/dashboard.html'
-    redirect_url = reverse_lazy('login')
+    redirect_url = reverse_lazy('confirm')
 
     def get(self,request,*args,**kwargs):
         
@@ -52,7 +52,6 @@ class DashboardView(generic.View):
             # data.drop_duplicates()
             dup_data = data[data.duplicated(keep=False)]
             duplicates_list = dup_data.index.tolist()
-            
             dup_data = dup_data.values.tolist()
             result = generate(dup_data,[])
             result = json.dumps(result,cls=PdEncoder)
@@ -69,8 +68,9 @@ class DashboardView(generic.View):
 
 
 
-class ProfileView(generic.View):
+class ProfileView(LoginRequiredMixin,CheckVerificationMixin,generic.View):
     template_name = 'core/profile.html'
+    redirect_url = reverse_lazy('confirm')
     def get(self,request):
 
         return render(request,self.template_name)

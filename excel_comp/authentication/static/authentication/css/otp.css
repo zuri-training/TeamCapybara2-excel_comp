@@ -58,17 +58,15 @@ p{
 }
 
 #verify{
-    position: relative;
-    margin-left: 55%;
     background: #04045E;
     color: rgba(202, 240, 248, 0.9) ;
     padding: 10px 20px;
     border-radius: 5px;
-    width: 250px;
+    width: 35%;
     font-weight: 700;
     font-size: 20px;
     border: 1px solid  #04045E;
-    transform: translateY(-100%);
+    cursor: pointer;
     
 }
 #resend{
@@ -77,36 +75,36 @@ p{
     color:  #04045E;
     padding: 10px 20px;
     border-radius: 5px;
-    width: 250px;
+    width: 35%;
     font-weight: 700;
     font-size: 20px;
     border: 1px solid  #04045E;
     transition: 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
 }
 .btn{
     width: 600px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
-a>button:hover {
+#resend:hover {
     transform: scale(0.95);
     cursor: pointer;
 }
-#verify:hover{
+#verify:hover {
     cursor: pointer;
     border: none;
     transition: 0.5s ease;
 }
-
-
-
-
 
 .otp{
     background: linear-gradient(0deg, rgba(202, 240, 248, 0.3), rgba(202, 240, 248, 0.3)), #FFFFFF;
     
   }
   
-
   input{
 
     width:70px;
@@ -116,10 +114,6 @@ a>button:hover {
     font-weight: 600;
     font-size: 32px;
   }
-
-
-
-
 
 
 /*              for mobile screens             */

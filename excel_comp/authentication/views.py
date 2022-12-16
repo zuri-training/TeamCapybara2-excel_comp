@@ -73,6 +73,7 @@ class AccountValidationView(generic.View):
             return render(request,self.template_name,{'error':'incorrect codes entered try again!'})
 
 
+
 class RequestAuthenticationView(generic.View):
     template_name = 'registration/auth.html'
     def get(self,request,*args,**kwargs):
@@ -85,7 +86,7 @@ class RequestAuthenticationView(generic.View):
             code = generate_otp()
             send_otp_mail(email,code)
             return HttpResponseRedirect(reverse('verify_account'))
-        return render(request,self.template_name,{'error':'incorrect codes entered try again!'})
+        return render(request,self.template_name)
 
 
 class LoginView(generic.View):

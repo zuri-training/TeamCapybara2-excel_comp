@@ -31,6 +31,7 @@ body {
 }
 /* mobile first */
 /* index.html */
+
 .hero-logo {
   text-align: center;
 }
@@ -319,56 +320,7 @@ p {
     font-family: 'Open Sans';
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5% 10px;
-    border-bottom: 1px solid #04045E;
-}
-#brand_color {
-    color: #00B4D8;
-}
 
-.navigations,.nav-btns {
-    display: flex;
-    gap: 45px;
-}
-
-.navigations a {
-    text-decoration: none;
-    color: #000;
-}
-.nav-btns {
-    gap: 10px;
-}
-.nav-btns a{
-    font-family: Montserrat;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid;
-    border-radius: 8px;
-    cursor: pointer;
-}
-#btn-1 {
-    border-color: #04045E;
-    color: #04045E;
-}
-#btn-1:hover {
-    background: rgb(159, 230, 247);
-    color: rgb(216, 244, 250);
-}
-
-#btn-2 {
-    background-color: #04045E;
-    color: rgb(207, 241, 249);
-    /* text-decoration: none; */
-}
-
-#btn-2:hover {
-    background: #010122;
-    color: rgb(207, 241, 249);
-}
 
 main {
     padding: 8% 17% 0;
@@ -381,18 +333,11 @@ ul {
     list-style: none;
 }
 
-/* ul li::marker {
-    font-size: 2em;
-    vertical-align: middle;
-    padding-top: 5px;
-} */
-
 ul li::before {
     content: "\2022";
     color: #04045E;
     font-weight: bold;
     font-size: 2.5em;
-    /* padding-top: 5px; */
     display: inline-block; 
     width: 1em;
     margin-left: -1em;
@@ -415,7 +360,7 @@ ul li::before {
 footer {
     margin-top: 30px;
     display: flex;
-    padding: 3% 5% 10% ;
+    padding: 3% 2% 5% ;
     border-top: 1px solid #04045E;
 }
 
@@ -428,6 +373,7 @@ footer {
     padding-top: 20px;
     font-weight: 500;
     text-decoration: none;
+    color: #04045E;
 }
 
 .right h3 {

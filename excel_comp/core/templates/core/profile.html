@@ -5,7 +5,27 @@
 <link rel="stylesheet" href="{% static 'core/css/change.css' %}">
 <style>
   .page-container {
-    padding: 0;
+    padding: 0 10%;
+  }
+
+  .container {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    /* padding-left: 15%; */
+  }
+  .doc {
+    border: 1px solid blue;
+    border-radius: 10px;
+    background: #fff;
+    width: 30%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .doc > h3 {
+    color: #000;
   }
 </style>
 {% endblock %}}
@@ -13,93 +33,17 @@
 {% block content %}
   <main class="page-container">
     <div class="container">
-      <img src="{% static 'core/images/logo.svg' %}" alt="brand" />
-      <!-- <h1>Profile</h1> -->
-      <div class="profile">
-        <div class="image">
-            <div class="upload">
-                <div class="edit">
-                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-                    <label for="imageUpload"></label>
-                </div>
-                <div class="preview">
-                    <div id="imagePreview" style="background-image: url('https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=');">
-                    </div>
-                </div>
-            </div>
+      {% for document in documents %}
+        <div class="doc">
+          <h3> {{ document.title }} </h3>
         </div>
-        <div class="details">
-            <form method="post">
-              {% csrf_token %}
-                <label for="username"> Username : </label>
-                <input type="text" placeholder="user001"><br><br>
-                <label for="email">Email address : </label>
-                <input type="email" placeholder="user@excelcomp.com"><br><br>
-                <label for="total">Documents :</label>
-                <input type="number">
-                <input type="submit" value="Save">
-            </form>
-            <a href="#"><button>Edit profile</button></a>
-            <a href=""><button>Change password</button></a>
+      {% endfor %}
+        <div class="doc">
+          <h3>Hello</h3>
         </div>
-      </div>
-      <h1>My Documents</h1>
-      <div class="documents">
-        <ul>
-          <li>
-            <h2> &#9755; Document name</h2>
-            <h3>Download options :</h3>
-            <div class="options">
-                <div>
-                  <div>
-                    <a href="#"
-                      ><button>Single document, duplicates highlighted</button></a
-                    >
-                  </div>
-                  <div>
-                    <a href="#"><button>Two document, duplicates removed</button></a>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <a href="#"
-                      ><button>Single documents, duplicates highlighted</button></a
-                    >
-                  </div>
-                  <div>
-                    <a href="#"><button>Two documents, duplicates removed</button></a>
-                  </div>
-                </div>
-              
-          </li>
-          <li>
-            <h2> &#9755; Document name</h2>
-            <h3>Download options :</h3>
-            <div class="options">
-                <div>
-                  <div>
-                    <a href="#"
-                      ><button>Single document, duplicates highlighted</button></a
-                    >
-                  </div>
-                  <div>
-                    <a href="#"><button>Two document, duplicates removed</button></a>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <a href="#"
-                      ><button>Single documents, duplicates highlighted</button></a
-                    >
-                  </div>
-                  <div>
-                    <a href="#"><button>Two documents, duplicates removed</button></a>
-                  </div>
-                </div>
-              
-          </li>
-        </ul>
-      </div>
+        <div class="doc"></div>
+        <div class="doc"></div>
+        <div class="doc"></div>
     </div>
 
   </main>

@@ -28,13 +28,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '*',
 ]
 
-
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'login'
+LOGOUT_URL = 'login'
 # Application definition
 
 INSTALLED_APPS = [
@@ -108,12 +110,12 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-if not DEBUG:
-    DATABASE_URL = env('DATABASE_URL')
+# if not DEBUG:
+#     DATABASE_URL = env('DATABASE_URL')
 
-    DATABASES = {
-        "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-    }
+#     DATABASES = {
+#         "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+#     }
 
 
 # Password validation

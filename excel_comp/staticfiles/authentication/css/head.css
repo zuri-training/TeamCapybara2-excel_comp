@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #04045E;
+}
+
+
+
+body {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 20px;
+    /* margin: auto; */
+    text-align: center;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 32px;
+    margin: 5%;
+}
+
+/* for the header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    padding: 35px 0;
+    border-bottom: 1px #04045E solid;
+}
+
+.cen_nav {
+    display: flex;
+    gap: 20px;
+}
+
+#brand {
+    transform: scale(0.7);
+}
+
+#avatar {
+    transform: scale(0.45);
+}
+
+.cen_nav > a {
+    text-decoration: none;
+    margin: 0 20px;
+    transition: 0.2s ease-in;
+}
+
+.nav-icon {
+    transform: translateY(-100%);
+    border: none;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.nav-icon:hover {
+    cursor: pointer;
+    color: #00B4D8 ;
+}
+
+.cen_nav a:hover {
+    font-size: 22px;
+}
+
+.log {
+    position: fixed;
+    background: #04045E;
+    width: 100px;
+    height: 40px;
+    padding-top: 10px;
+    font-size: 16px;
+    right: 0px;
+    z-index: -1;
+    transform: translateY(-100%);
+}
+
+.log a {
+    background: #04045E;
+    color: rgba(202, 240, 248, 0.9);
+}
+.log a:hover {
+    font-size: 17px;
+}
+
+.hover{
+   z-index: 2;
+   transform: translateY(-20%);
+   transition: 0.6s ease;
+}
+
+
+/* for the nav bar */
+.nav{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    transform: translateX(-100%);
+    
+}
+.show{
+    transform: translateX(0);
+    transition: 0.6s ease;
+}
+
+
+.list {
+    overflow: hidden;
+    text-align: left;
+    padding: 20px 0;
+}
+.list  a {
+    padding: 10px 0;
+    background: none;
+    height: 100%;
+    width: 100%;
+}
+.list a img {
+    transform: translateY(5%);
+    margin-right: 20px;
+}
+.list:hover{
+    background: #04045E;
+    color: rgba(202, 240, 248, 0.9);
+}
+.list a:hover {
+    color: rgba(202, 240, 248, 0.9);
+}
