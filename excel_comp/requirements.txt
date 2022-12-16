@@ -9,5 +9,4 @@ psycopg2==2.9.5
 sqlparse==0.4.3
 tzdata==2022.7
 whitenoise==5.3.0
-
-
+XlsxWriter==3.0.3

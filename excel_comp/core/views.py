@@ -1,3 +1,4 @@
+from io import BytesIO
 from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -8,6 +9,9 @@ from core.mixins import CheckVerificationMixin
 import pandas as pd
 import json
 import os
+import xlsxwriter
+
+
 
 def generate(x,params=[]):
     array_len = list(range(len(x)))        
@@ -67,7 +71,9 @@ class DashboardView(generic.View):
             file_size = file.seek(0,os.SEEK_END)
             file.seek(0,os.SEEK_SET)
 
-            context = {'result':da,'duplicates':final,'data':dat.to_json(),'total_duplicates':len(dup_data),'size':file_size/1000}
+            context = {'result':da,'duplicates':final,'data':dat.to_json(),'total_duplicates':len(dup_data),
+                        'size':file_size/1000,'original':json.dumps(datas,cls=PdEncoder)
+                    }
 
             return render(request,'core/results.html',context)
             

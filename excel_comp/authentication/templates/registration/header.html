@@ -6,16 +6,10 @@
         <a href="{% url 'how_to_use' %}">How to use</a>
         <a href="{% url 'about' %}">About</a>
     </div>
-    {% if request.user.is_authenticated %} 
-    <!-- <div class="nav-btns">
-        <a href="#" id="btn-2" >{{ request.user.username }}</a>
-        <a href="{% url 'logout' %}">Logout</a>
-    </div> -->
-    {% else %}
+  
     <div class="nav-btns">
         <a href="{% url 'login' %}" id="btn-1">Sign In</a>
         <a href="{% url 'register' %}" id="btn-2" >Sign Up</a>
     </div>
-    {% endif %}
     
 </nav>

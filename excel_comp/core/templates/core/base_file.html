@@ -5,21 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel_Comp</title>
+    {% if request.user.is_authenticated %} 
+    <link rel="stylesheet" href="{% static 'authentication/css/head.css' %}">
+    
+    {% else %}
+    <link rel="stylesheet" href="{% static 'authentication/css/header.css' %}">
+    {% endif %}
     <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+    <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
     {% block extra_css %} 
 
     {% endblock %}
 </head>
 <body>
+    {% if request.user.is_authenticated %}
+    {% include 'registration/head.html' %}
+    {% else %}
     {% include 'registration/header.html' %}
-
+     {% endif %}
     {% block content %} 
 
     {% endblock %}
     {% include 'registration/footer.html' %}
-    
-</body>
-{% block extra_script %} 
-{% endblock %}
+    {% if request.user.is_authenticated %} 
+    <script>
+        const brand = document.getElementById("avatar");
+        const drop = document.getElementById("dropdown");
+        const container = document.getElementById("container");
+        const navbar = document.getElementById("navbar");
+        const show = document.getElementById("add");
+        const hide = document.getElementById("remove");
+  
+        show.addEventListener("click", (event) => {
+          navbar.classList.add("show");
+        });
+        hide.addEventListener("click", (event) => {
+          navbar.classList.remove("show");
+        });
+  
+        brand.addEventListener("mouseover", (event) => {
+          drop.classList.add("hover");
+        });
+        // container.addEventListener("mouseover", (event) => {
+        //   drop.classList.remove("hover");
+        // });
 
+        window.onmouseover = function(event)  {
+            if (event.target == container) {
+                drop.style.display = "none";
+            }
+        }
+      </script>
+    {% endif %}
+    {% block extra_script %} 
+    {% endblock %}
+</body>
 </html>

@@ -2,7 +2,6 @@
 {% load static %}
 {% block extra_css %} 
 <link rel="stylesheet" href="{% static 'core/css/result.css' %}">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" /> -->
 <link rel="stylesheet" href="https://unpkg.com/x-data-spreadsheet@1.1.5/dist/xspreadsheet.css">
 
 <style>
@@ -47,56 +46,57 @@
     <!-- <div id="example"></div> -->
     <h1>Summary</h1>
     <div class="summary">
+
       <div class="space top"><p>Total number of duplicates: {{ total_duplicates }}</p></div>
-      <div class="detail">
-        <div>
-          <label class="label">File size:</label>
-          <!--deet is details of summary -->
-          <label class="deet">{{ size }}KB</label>
-        </div>
-        <div>
-          <label class="label">File size:</label>
-          <!--deet is details of summary -->
-          <label class="deet">{{ size }}KB</label>
-        </div>
       
-      <div class="space"></div>
-    </div>
+      <div>
+        <label class="label">File size:</label>
+        <!--deet is details of summary -->
+        <label class="deet">{{ size }}KB</label>
+      </div>
+
     <h1>Select Download Option</h1>
     <div class="options">
-      <div>
+      
+      <div class="di1">
         <div>
-          <a href="#"
-            ><button>Single document, duplicates highlighted</button></a
+          <a id="download"><button class="download">Single document, duplicates highlighted</button></a
           >
         </div>
+
         <div>
-          <a href="#"><button>Two document, duplicates removed</button></a>
+          <a href="#"><button class="download">Two document, duplicates removed</button></a>
         </div>
       </div>
-      <div>
+
+      <div class="di2">
+
         <div>
-          <a href="#"
-            ><button>Single documents, duplicates highlighted</button></a
+          <a href=""
+            download><button class="download">Single documents, duplicates highlighted</button></a
           >
         </div>
+
         <div>
-          <a href="#"><button>Two documents, duplicates removed</button></a>
+          <a href="#" download><button class="download">Two documents, duplicates removed</button></a>
         </div>
+
       </div>
+
     </div>
+
   </div>
 </main>
 
-{{ data|json_script:"result2" }}
 {% endblock %}
 
 
 {% block extra_script %} 
 <script src="https://unpkg.com/x-data-spreadsheet@1.1.5/dist/xspreadsheet.js"></script>
-<script>
 
-  
+<!-- use xlsx.full.min.js from version 0.19.1 -->
+<script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.19.1/package/dist/xlsx.full.min.js"></script>
+<script>  
   const options = {
         mode: 'read', // edit | read
         showToolbar: false,
@@ -199,18 +199,27 @@ const myData = [{
   { name: 'sheet-test' }
   ]
   
-
   const s1 = x_spreadsheet(document.getElementById("example1"),options)
   .loadData(myData1) // load data
 
+</script>
+<script type="module">
+   import { read, writeFileXLSX } from "https://cdn.sheetjs.com/xlsx-0.19.1/package/xlsx.mjs";
+  const data = JSON.parse("{{ original|safe|escapejs }}")
+  console.log(typeof data)
+  console.log(data)
+  var workbook = XLSX.utils.book_new();
+  const worksheet = XLSX.utils.aoa_to_sheet(data);
   
-    // let duplicates = document.getElementsByClassName('duplicates')
-    // let myTable = document.getElementsByClassName('dataframe')[0]
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Dates");
 
-    // for (let i of duplicates) {
-    //     let value = Number(i.innerHTML)
-    //     myTable.rows[value+1].style.background = "green"
-    // }
-    
+  var download = document.getElementById('download')
+
+  download.addEventListener("click",() => {
+    console.log(typeof data)
+    XLSX.writeFile(workbook, "result.xlsx", { compression: true });
+  } )
+ 
+  
 </script>
 {% endblock %}
