@@ -125,11 +125,9 @@ class LoginView(generic.View):
         password = request.POST['password']
         user = authenticate(request,username=username,password=password)
         if user is not None:
-            print('I am in')
             login(request,user)
             return HttpResponseRedirect(reverse('dashboard'))
         else:
-            print('None User')
             return render(request,self.template_name,context)
 
 
