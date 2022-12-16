@@ -99,13 +99,7 @@ class RequestAuthenticationView(generic.View):
         email = request.user.email
         code = generate_otp()
         send_otp_mail(email,code)
-        # email = request.POST.get('email')
-        # if email:
-        #     i
-        #     if len(User.objects.get(email=email)) == 1:
-        #         code = generate_otp()
-        #         send_otp_mail(email,code)
-        #         return HttpResponseRedirect(reverse('verify_account'))
+  
             
         return render(request,self.template_name)
 

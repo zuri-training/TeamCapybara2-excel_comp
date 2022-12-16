@@ -30,8 +30,9 @@
     {% include 'registration/footer.html' %}
     {% if request.user.is_authenticated %} 
     <script>
-        const brand = document.getElementById("avatar");
-        const drop = document.getElementById("dropdown");
+        const brand = document.getElementById("prof");
+
+        const drop = document.getElementById("prof_drop");
         const container = document.getElementById("container");
         const navbar = document.getElementById("navbar");
         const show = document.getElementById("add");
@@ -45,11 +46,9 @@
         });
   
         brand.addEventListener("mouseover", (event) => {
-          drop.classList.add("hover");
+          drop.style.display = block;
         });
-        // container.addEventListener("mouseover", (event) => {
-        //   drop.classList.remove("hover");
-        // });
+  
 
         window.onmouseover = function(event)  {
             if (event.target == container) {

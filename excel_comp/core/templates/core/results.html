@@ -64,9 +64,9 @@
           >
         </div>
 
-        <!-- <div>
-          <a href="#"><button class="download">Two document, duplicates removed</button></a>
-        </div> -->
+        <div>
+          <a id="highlight"><button class="download">Two document, duplicates highlighted</button></a>
+        </div>
       </div>
 
       <div class="di2">
@@ -86,6 +86,7 @@
     </div>
 
   </div>
+  <input type="file" value="{{ highlighted }}" id="workbook" hidden>
 </main>
 
 {% endblock %}
@@ -215,13 +216,19 @@ const myData = [{
   
   // XLSX.utils.book_append_sheet(workbook, worksheet, "Dates");
 
-  // var download = document.getElementById('download')
+  var download = document.getElementById('download')
+  var highlight = document.getElementById('highlight')
+  // let workbook = document.getElementById('workbook').files[0]
+  // console.log(workbook)
+  // highlight.addEventListener("click",() => {
+  //       XLSX.writeFile(workbook, "highlighted.xlsx", { compression: true });
+  //       // let file = XLSX.read(workbook,cellStyles=true)
+  //     } )
 
   download.addEventListener("click",() => {
-    // console.log(typeof data)
-    // XLSX.writeFile(workbook, "result.xlsx", { compression: true });
-    XLSX.writeFile(xtos(s.getData()), "result.xlsx");
-  } )
+        // XLSX.writeFile(workbook, "result.xlsx", { compression: true });
+        XLSX.writeFile(xtos(s.getData()), "result.xlsx");
+      } )
     /* build workbook from the grid data */
 
 </script>

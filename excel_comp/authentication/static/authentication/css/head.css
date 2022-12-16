@@ -22,7 +22,7 @@ header {
     width: 100%;
     height: 50px;
     overflow: hidden;
-    padding: 35px 0;
+    padding: 35px 5%;
     border-bottom: 1px #04045E solid;
 }
 
@@ -44,6 +44,28 @@ header {
     margin: 0 20px;
     transition: 0.2s ease-in;
     color:#04045E;
+}
+
+#prof {
+    position: relative;
+}
+
+#prof_drop {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #04045E;
+    /* justify-content: center; */
+}
+
+#prof_drop > a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+}
+
+#prof_drop > a:hover {
+    background: #00B4D8;
 }
 
 .nav-icon {

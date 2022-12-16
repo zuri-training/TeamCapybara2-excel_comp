@@ -30,9 +30,10 @@
     {% include 'registration/footer.html' %}
     {% if request.user.is_authenticated %} 
     <script>
-        const brand = document.getElementById("avatar");
-        const drop = document.getElementById("dropdown");
-        const container = document.getElementById("container");
+        const brand = document.getElementById("prof");
+
+        const drop = document.getElementById("prof_drop");
+        const container = document.getElementsByClassName("page-container")[0];
         const navbar = document.getElementById("navbar");
         const show = document.getElementById("add");
         const hide = document.getElementById("remove");
@@ -45,11 +46,8 @@
         });
   
         brand.addEventListener("mouseover", (event) => {
-          drop.classList.add("hover");
+          drop.style.display = 'flex';
         });
-        // container.addEventListener("mouseover", (event) => {
-        //   drop.classList.remove("hover");
-        // });
 
         window.onmouseover = function(event)  {
             if (event.target == container) {

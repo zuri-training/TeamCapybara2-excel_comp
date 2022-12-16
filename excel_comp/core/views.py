@@ -14,16 +14,16 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, Color, colors, fills
 from openpyxl.utils.dataframe import dataframe_to_rows
 
-def highlight_duplicate(dataframe,duplicates):
+def highlight_duplicate(dataframe,duplicates,filename):
     wb = Workbook()
     ws = wb.active
 
     for row_index in duplicates:
         row = ws.row_dimensions[row_index]
         row.fill = fills.PatternFill(patternType='solid', fgColor=Color(rgb='00FF00'))
-
-    wb.save("pandas_openpyxl.xlsx")
-    return wb
+    
+    wb.save(f"processed_files/{filename}.xlsx")
+    return filename
 
 
 
@@ -85,17 +85,15 @@ class DashboardView(generic.View):
             file_size = file.seek(0,os.SEEK_END)
             file.seek(0,os.SEEK_SET)
 
-            highlighted_duplicates = highlight_duplicate(data,duplicates_list)
+            
 
             context = {'result':da,'duplicates':final,'data':dat.to_json(),'total_duplicates':len(dup_data),
-                        'size':file_size/1000,'original':json.dumps(datas,cls=PdEncoder),
-                        'highlighted':highlighted_duplicates
+                        'size':file_size/1000,'original':json.dumps(datas,cls=PdEncoder)
                     }
 
             return render(request,'core/results.html',context)
             
         return render(request,self.template_name)
-
 
 
 

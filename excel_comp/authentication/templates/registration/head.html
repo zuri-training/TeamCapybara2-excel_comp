@@ -10,12 +10,17 @@
           <a href="{% url 'about' %}">About</a>
       </div>
       <div>
-        <a href="#"><img src="{% static 'authentication/images/avatar.svg' %}" alt="avatar" id="avatar" /></a>
+        <a id="prof">
+          <img src="{% static 'authentication/images/avatar.svg' %}" alt="avatar" id="avatar" />
+            <div id="prof_drop" style="display: none;">
+              <a href="">Profile</a>
+              <a href="{% url 'logout' %}">Logout</a>
+            </div>
+        </a>
+
       </div>
 </header>
-    <div class="log" id="dropdown">
-      <a href="{% url 'logout' %}"> Logout</a>
-    </div>
+    
 
     <!-- put content in container to activate the remove the logout dropdown -->
     
