@@ -24,7 +24,7 @@
           {% csrf_token %} 
           <legend class="legend">Don't Have An Account? <span class="create-now">Create Now.</span></legend>
             <input type="text" id="signin-email" name="username" placeholder="username :" required> <br>
-            <input type="password" id="signin-pwd" name="pwd" placeholder="Password :" required>
+            <input type="password" id="signin-pwd" name="password" placeholder="Password :" required>
 
           <br>
         {{ request.user.username }}

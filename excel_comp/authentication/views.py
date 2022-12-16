@@ -1,3 +1,4 @@
+import email
 from django.shortcuts import render,get_object_or_404
 from django.views import generic
 from django.http import HttpResponseRedirect
@@ -81,7 +82,12 @@ class AccountValidationView(generic.View):
             return render(request,self.template_name,{'error':'incorrect codes entered try again!'})
 
 
-
+def resend_otp(request):
+    email = request.user.email
+    code = generate_otp()
+    send_otp_mail(email,code)
+    return True
+    
 class RequestAuthenticationView(generic.View):
     template_name = 'registration/auth.html'
     def get(self,request,*args,**kwargs):
@@ -89,11 +95,17 @@ class RequestAuthenticationView(generic.View):
         return render(request,self.template_name)
 
     def post(self,request,*args,**kwargs):
-        email = request.POST.get('email')
-        if email:
-            code = generate_otp()
-            send_otp_mail(email,code)
-            return HttpResponseRedirect(reverse('verify_account'))
+        email = request.user.email
+        code = generate_otp()
+        send_otp_mail(email,code)
+        # email = request.POST.get('email')
+        # if email:
+        #     i
+        #     if len(User.objects.get(email=email)) == 1:
+        #         code = generate_otp()
+        #         send_otp_mail(email,code)
+        #         return HttpResponseRedirect(reverse('verify_account'))
+            
         return render(request,self.template_name)
 
 

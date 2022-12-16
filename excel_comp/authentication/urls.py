@@ -8,7 +8,7 @@ urlpatterns = [
     path('',views.logout_user,name='logout'),
     path('register/',views.RegisterView.as_view(),name='register'),
     path('verify/',views.AccountValidationView.as_view(),name='verify_account'),
-    path('confirm/',views.RequestAuthenticationView.as_view(),name="confirm"),
+    path('confirm/',views.resend_otp,name="confirm"),
     
 
     # Authentication Views
