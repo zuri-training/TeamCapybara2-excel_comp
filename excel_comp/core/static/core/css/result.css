@@ -30,7 +30,7 @@ p{
 .results {
     display: flex;
     gap: 20px;
-    height: 70vh;
+    height: 85vh;
     width: 100%;
     margin: auto;
     /* flex-direction: column; */
@@ -96,11 +96,7 @@ a>button:hover {
     height: 150px;
     
 }
-/* .options >div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
+
 
 
 

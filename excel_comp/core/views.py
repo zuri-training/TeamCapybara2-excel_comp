@@ -10,6 +10,20 @@ import pandas as pd
 import json
 import os
 import xlsxwriter
+from openpyxl import Workbook
+from openpyxl.styles import Font, Color, colors, fills
+from openpyxl.utils.dataframe import dataframe_to_rows
+
+def highlight_duplicate(dataframe,duplicates):
+    wb = Workbook()
+    ws = wb.active
+
+    for row_index in duplicates:
+        row = ws.row_dimensions[row_index]
+        row.fill = fills.PatternFill(patternType='solid', fgColor=Color(rgb='00FF00'))
+
+    wb.save("pandas_openpyxl.xlsx")
+    return wb
 
 
 
@@ -40,7 +54,7 @@ class HomepageView(generic.View):
 
         return render(request,self.template_name)
 
-class DashboardView(LoginRequiredMixin,CheckVerificationMixin,generic.View):
+class DashboardView(generic.View):
     template_name = 'core/dashboard.html'
     redirect_url = reverse_lazy('confirm')
 
@@ -71,8 +85,11 @@ class DashboardView(LoginRequiredMixin,CheckVerificationMixin,generic.View):
             file_size = file.seek(0,os.SEEK_END)
             file.seek(0,os.SEEK_SET)
 
+            highlighted_duplicates = highlight_duplicate(data,duplicates_list)
+
             context = {'result':da,'duplicates':final,'data':dat.to_json(),'total_duplicates':len(dup_data),
-                        'size':file_size/1000,'original':json.dumps(datas,cls=PdEncoder)
+                        'size':file_size/1000,'original':json.dumps(datas,cls=PdEncoder),
+                        'highlighted':highlighted_duplicates
                     }
 
             return render(request,'core/results.html',context)
