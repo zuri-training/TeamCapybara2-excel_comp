@@ -18,7 +18,7 @@ A platform that helps users compare the content of excel files
   
  ### Documentation 
   
- The documentation for the project can be found [here](https://docs.google.com/document/d/1gvTIqgF9_66DaZWLoUBb-yK252LvrkOc_C6Bw_KiRJI/edit?usp=sharing) 
+ The documentation for the project can be found [here](https://docs.google.com/document/d/1nULMLQKbRjDqWWHBwMk10m0dkM1lDWEpdwI22CI6nS4/edit?usp=sharing) 
   
  ### About 
   
@@ -61,7 +61,7 @@ A platform that helps users compare the content of excel files
  ![](./) 
   
  ### Links 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com) 
+- Live Site URL: [Excel_comp](https://excelcomprun.up.railway.app/) 
   
  ## Process  
   
