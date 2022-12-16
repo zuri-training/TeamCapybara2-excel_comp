@@ -49,14 +49,12 @@ p{
 }
 
 .summary{
-    width: 100%;
-    height: 35vh;
     border: 1px #04045E solid;
     border-radius: 20px;
+    padding: 0 5%;
 }
 .summary>.detail{
     border-bottom:  1px #04045E solid;
-    height: 12.5%;
     width: 100%;
     display: flex;
     padding: 0 10%;
@@ -66,7 +64,6 @@ p{
     width: 50%;
 }
 .space{
-    height: 25%;
     width: 60%;
     margin: auto;
     text-align: center;

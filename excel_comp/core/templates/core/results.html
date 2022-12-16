@@ -33,65 +33,33 @@
   <div class="container">
   <img src="{% static 'core/images/logo.svg' %}" alt="brand" />
     <h1>Results</h1>
-    <!-- <div class="results">
+    <div class="results">
      
-      <div class="result" id="example"></div>
-      <div class="result" id="example1"></div>
+      <div class="result" id="example">
+        <h3>Processed Data</h3>
+      </div>
+      <div class="result" id="example1">
+        <h3>Original Data</h3>
+      </div>
       
-    </div> -->
+    </div>
 
-    <div id="example"></div>
+    <!-- <div id="example"></div> -->
     <h1>Summary</h1>
     <div class="summary">
-      <div class="space top"><p>Total number of duplicates: 17</p></div>
+      <div class="space top"><p>Total number of duplicates: {{ total_duplicates }}</p></div>
       <div class="detail">
         <div>
           <label class="label">File size:</label>
           <!--deet is details of summary -->
-          <label class="deet">16KB</label>
+          <label class="deet">{{ size }}KB</label>
         </div>
         <div>
           <label class="label">File size:</label>
           <!--deet is details of summary -->
-          <label class="deet">16KB</label>
+          <label class="deet">{{ size }}KB</label>
         </div>
-      </div>
-      <div class="detail">
-        <div>
-          <label class="label">Created:</label>
-          <!--deet is details of summary -->
-          <label class="deet">08/06/2021</label>
-        </div>
-        <div>
-          <label class="label">Created:</label>
-          <!--deet is details of summary -->
-          <label class="deet">08/06/2021</label>
-        </div>
-      </div>
-      <div class="detail">
-        <div>
-          <label class="label">Last Modfied:</label>
-          <!--deet is details of summary -->
-          <label class="deet">16/10/2022</label>
-        </div>
-        <div>
-          <label class="label">Last Modfied:</label>
-          <!--deet is details of summary -->
-          <label class="deet">16/10/2022</label>
-        </div>
-      </div>
-      <div class="detail">
-        <div>
-          <label class="label">Last modified by:</label>
-          <!--deet is details of summary -->
-          <label class="deet">John Doe</label>
-        </div>
-        <div>
-          <label class="label">Last modified by:</label>
-          <!--deet is details of summary -->
-          <label class="deet">John Doe</label>
-        </div>
-      </div>
+      
       <div class="space"></div>
     </div>
     <h1>Select Download Option</h1>
@@ -167,66 +135,9 @@
         },
       }
 
-//       const myData2 = [{
-//       name: 'sheet-test-1',
-//       freeze: 'B3',
-//       styles: [
-//         {
-//           bgcolor: '#f4f5f8',
-//           textwrap: true,
-//           color: '#900b09',
-//           border: {
-//             top: ['thin', '#0366d6'],
-//             bottom: ['thin', '#0366d6'],
-//             right: ['thin', '#0366d6'],
-//             left: ['thin', '#0366d6'],
-//           },
-//         },
-//         {
-//           bgcolor: 'yellow',
-//           textwrap: false,
-//           color: '#fff',
-//           border: {
-//             top: ['thin', '#036ed6'],
-//             bottom: ['thin', '#03f6d6'],
-//             right: ['thin', ''],
-//             left: ['thin', ''],
-//           },
-//         }
-//       ],
-//       merges: [
-//         'C3:D4',
-//       ],
-//       rows: {
-//         1: {
-//           cells: {
-//             0: { text: 'testingtesttestetst', style: 1 },
-//             2: { text: 'testing' },
-//           },
-//         },
-//         2: {
-//           height: 70,
-//           cells: {
-//             0: { text: 'render' ,style: 1},
-//             1: { text: 'Hello',style: 1 },
-//             2: { text: 'haha', style: 1},
-//           }
-//         },
-//         8: {
-//           cells: {
-//             8: { text: 'border test', style: 1 },
-//           }
-//         }
-//       },
-//     }, 
-//     { name: 'sheet-test' }
-// ]
-
-// const mySpreadSheet = x_spreadsheet(document.getElementById("demo"),options)
-//   .loadData(myData2)
 
 
-const da = JSON.parse("{{ result|safe|escapejs }}")
+const data = JSON.parse("{{ result|safe|escapejs }}")
   
 const myData = [{
   name: 'sheet-test-1',
@@ -256,7 +167,7 @@ const myData = [{
         }
   ],
   
-  rows: da
+  rows: data
 }, 
 { name: 'sheet-test' }
 ]
@@ -293,13 +204,13 @@ const myData = [{
   .loadData(myData1) // load data
 
   
-    let duplicates = document.getElementsByClassName('duplicates')
-    let myTable = document.getElementsByClassName('dataframe')[0]
+    // let duplicates = document.getElementsByClassName('duplicates')
+    // let myTable = document.getElementsByClassName('dataframe')[0]
 
-    for (let i of duplicates) {
-        let value = Number(i.innerHTML)
-        myTable.rows[value+1].style.background = "green"
-    }
+    // for (let i of duplicates) {
+    //     let value = Number(i.innerHTML)
+    //     myTable.rows[value+1].style.background = "green"
+    // }
     
 </script>
 {% endblock %}

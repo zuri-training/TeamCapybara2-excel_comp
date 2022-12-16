@@ -7,7 +7,7 @@ from core.mixins import CheckVerificationMixin
 
 import pandas as pd
 import json
-
+import os
 
 def generate(x,params=[]):
     array_len = list(range(len(x)))        
@@ -49,17 +49,25 @@ class DashboardView(generic.View):
         if file:
             dat = pd.read_excel(file)
             data = pd.DataFrame(dat)
-            # data.drop_duplicates()
+
             dup_data = data[data.duplicated(keep=False)]
             duplicates_list = dup_data.index.tolist()
             dup_data = dup_data.values.tolist()
             result = generate(dup_data,[])
             result = json.dumps(result,cls=PdEncoder)
+
             datas = data.values.tolist()
             da = generate(datas,duplicates_list)
             da = json.dumps(da,cls=PdEncoder)
 
-            context = {'result':da,'duplicates':result,'data':dat.to_json()}
+            original = data.values.tolist()
+            original = generate(original,[])
+            final = json.dumps(original,cls=PdEncoder)
+
+            file_size = file.seek(0,os.SEEK_END)
+            file.seek(0,os.SEEK_SET)
+
+            context = {'result':da,'duplicates':final,'data':dat.to_json(),'total_duplicates':len(dup_data),'size':file_size/1000}
 
             return render(request,'core/results.html',context)
             
