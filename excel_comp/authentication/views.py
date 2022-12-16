@@ -5,13 +5,23 @@ from django.urls import reverse
 from django.contrib.auth.forms import PasswordResetForm,AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-
+from django.core.mail import send_mail
+from django.conf import settings
 
 from authentication.models import Profile
 from authentication.forms import UserRegistrationForm
 
 import random
 import string
+
+def send_otp_mail(recipient,code):
+    subject = 'welcome to Excel_Comp '
+    message = f'Hi {recipient.username}, thank you for registering in Excel_Comp. Kindly use the below code to verify your account \n{code}'
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [recipient.email, ]
+    send_mail( subject, message, email_from, recipient_list )
+
+
 
 def generate_otp():
     new_otp = ""
@@ -49,7 +59,7 @@ class RegisterView(generic.View):
            
 
 class AccountValidationView(generic.View):
-    template_name = 'registration/verify_account.html'
+    template_name = 'registration/otp.html'
     def get(self,request,*args,**kwargs):
         
         return render(request,self.template_name)
@@ -61,6 +71,21 @@ class AccountValidationView(generic.View):
             return HttpResponseRedirect(reverse('dashboard'))
         else:
             return render(request,self.template_name,{'error':'incorrect codes entered try again!'})
+
+
+class RequestAuthenticationView(generic.View):
+    template_name = 'registration/auth.html'
+    def get(self,request,*args,**kwargs):
+        
+        return render(request,self.template_name)
+
+    def post(self,request,*args,**kwargs):
+        email = request.POST.get('email')
+        if email:
+            code = generate_otp()
+            send_otp_mail(email,code)
+            return HttpResponseRedirect(reverse('verify_account'))
+        return render(request,self.template_name,{'error':'incorrect codes entered try again!'})
 
 
 class LoginView(generic.View):

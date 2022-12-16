@@ -1,0 +1,107 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'authentication/css/otp.css' %}">
+<style>
+  .page-container {
+    padding-top: 15px;
+    height: 100vh;
+  }
+  .heads {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+</style>
+{% endblock %}
+
+{% block content %} 
+<main class="page-container">
+  
+    <div class="container">
+      <form method="post">
+
+        <div class="details">
+          <div id="image1"> <img src="{% static 'authentication/images/Excel_Comp.png' %}"  alt=""></div>
+          <div id="ease">Duplicate with ease</div>
+          <div id="image2">  <img src="{% static 'authentication/images/vector1.png' %}"  alt=""></div>
+          <h1>Enter the code we have just sent you</h1>
+          <p>Check your email for a six digit code</p>
+          {% csrf_token %} 
+          
+          <div class="otp-container">
+            <input
+              class="otp"
+              type="text"
+              oninput="digitValidate(this)"
+              onkeyup="tabChange(1)"
+              maxlength="1"
+            />
+            <input
+              class="otp"
+              type="text"
+              oninput="digitValidate(this)"
+              onkeyup="tabChange(2)"
+              maxlength="1"
+            />
+            <input
+              class="otp"
+              type="text"
+              oninput="digitValidate(this)"
+              onkeyup="tabChange(3)"
+              maxlength="1"
+            />
+            <input
+              class="otp"
+              type="text"
+              oninput="digitValidate(this)"
+              onkeyup="tabChange(4)"
+              maxlength="1"
+            />
+            <input
+              class="otp"
+              type="text"
+              oninput="digitValidate(this)"
+              onkeyup="tabChange(5)"
+              maxlength="1"
+            />
+            <input
+              class="otp"
+              type="text"
+              oninput="digitValidate(this)"
+              onkeyup="tabChange(6)"
+              maxlength="1"
+            />
+          </div>
+
+        </div>
+
+        <div class="btn">
+          <a href="#"><button id="resend">Resend Code</button></a>
+          <a href="#"><button id="verify"> Verify code</button></a>
+        </div>
+      </form>
+    </div>
+</main>
+  <script src="otp.js"></script>
+{% endblock %}
+
+{% block extra_script %} 
+<script>
+  let digitValidate = function(ele){
+    console.log(ele.value);
+    ele.value = ele.value.replace(/[^0-9]/,'');
+  }
+  
+  let tabChange = function(val){
+      let ele = document.querySelectorAll('input');
+      if(ele[val-1].value != ''){
+        ele[val].focus()
+      }else if(ele[val-1].value == ''){
+        ele[val-2].focus()
+      }   
+   }
+</script>
+{% endblock %}

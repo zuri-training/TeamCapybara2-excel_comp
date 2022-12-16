@@ -1,44 +1,41 @@
 {% extends 'registration/base.html' %}
+{% load static %}
 
+{% block extra_css %}
+<style>
+  .page-container {
+    padding-top: 15px;
+    height: 70vh;
+  }
+  
+</style>
+{% endblock %}
 
 {% block content %} 
 <main class="page-container">
-<section>
-    <div>
-      <img src="" alt="">
-    </div>
-    <div class="signin-box">
-      <form method="POST">
-        {% csrf_token %} 
+
+      <div class="signin-box" style="padding-top: 0;">
         
-        <legend class="legend">Don't Have An Account? <span class="create-now">Create Now.</span></legend>
-          <input type="text" id="signin-email" name="username" placeholder="username :" required> <br>
-          <input type="password" id="signin-pwd" name="pwd" placeholder="Password :" required>
+          <div id="image1"> <img src="{% static 'authentication/images/Excel_Comp.png' %}"  alt=""></div>
+          <div id="ease">Duplicate with ease</div>
+          <div id="image2">  <img src="{% static 'authentication/images/vector1.png' %}"  alt=""></div>
+        
+        <form method="POST">
+          {% csrf_token %} 
+          <legend class="legend">Don't Have An Account? <span class="create-now">Create Now.</span></legend>
+            <input type="text" id="signin-email" name="username" placeholder="username :" required> <br>
+            <input type="password" id="signin-pwd" name="pwd" placeholder="Password :" required>
 
-        <br>
-      {{ request.user.username }}
-        <span class="forgot-pwd">Forgot password? <a href="{% url 'dashboard' %}">click here</a></span>
-    
-        <div class="btn-box">
-          <button id="btn1">Sign in</button>
-          <a href="{% url 'register' %}" id="btn2">Sign up</a>
-        </div>
-      </form>
-    
-
-    </div>
-  </section>
+          <br>
+        {{ request.user.username }}
+          <span class="forgot-pwd">Forgot password? <a href="{% url 'dashboard' %}">click here</a></span>
+      
+          <div class="btn-box">
+            <button id="btn1">Sign in</button>
+            <a href="{% url 'register' %}" id="btn2">Sign up</a>
+          </div>
+        </form>
+      </div>
+    <!-- </section> -->
 </main>
 {% endblock %}
-<!-- <form action="" method="post">
-    {% csrf_token %} 
-    
-    {{ form.as_p }}
-    <input type="submit" value="Login">
-</form>
-
-{% if form.errors %} 
-    {{ form.errors }}
-{% endif %}
-</body>
-</html> -->

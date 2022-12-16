@@ -1,9 +1,9 @@
 <nav>
     <h2>Excel<span id="brand_color">_Comp</span></h2>
     <div class="navigations">
-        <a href="">Home</a>
-        <a href="">How to use</a>
-        <a href="">About</a>
+        <a href="{% url 'dashboard' %}">Home</a>
+        <a href="{% url 'how_to_use' %}">How to use</a>
+        <a href="{% url 'about' %}">About</a>
     </div>
     {% if request.user.is_authenticated %} 
     <div class="nav-btns">

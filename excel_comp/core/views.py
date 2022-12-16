@@ -36,7 +36,7 @@ class HomepageView(generic.View):
 
         return render(request,self.template_name)
 
-class DashboardView(LoginRequiredMixin,CheckVerificationMixin,generic.View):
+class DashboardView(generic.View):
     template_name = 'core/dashboard.html'
     redirect_url = reverse_lazy('login')
 
@@ -64,6 +64,45 @@ class DashboardView(LoginRequiredMixin,CheckVerificationMixin,generic.View):
 
             return render(request,'core/results.html',context)
             
+        return render(request,self.template_name)
+
+
+
+
+class ProfileView(generic.View):
+    template_name = 'core/profile.html'
+    def get(self,request):
+
+        return render(request,self.template_name)
+
+class AboutView(generic.View):
+    template_name = 'core/about.html'
+    def get(self,request):
+
+        return render(request,self.template_name)
+
+class SupportView(generic.View):
+    template_name = 'core/support.html'
+    def get(self,request):
+
+        return render(request,self.template_name)
+
+class CookiesView(generic.View):
+    template_name = 'core/cookies.html'
+    def get(self,request):
+
+        return render(request,self.template_name)
+
+class PrivacyView(generic.View):
+    template_name = 'core/privacy.html'
+    def get(self,request):
+
+        return render(request,self.template_name)
+
+class HowToUseView(generic.View):
+    template_name = 'core/how_to_use.html'
+    def get(self,request):
+
         return render(request,self.template_name)
 
 class PdEncoder(json.JSONEncoder):

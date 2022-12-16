@@ -1,0 +1,166 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #04045E;
+
+}
+ /* container logo info email button */
+
+body {
+    font-family: 'open sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.otp-container input{
+    margin-bottom: 50px ;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+}
+
+
+h1{
+    font-weight: 600;
+    font-size: 32px;
+}
+p{
+    margin-bottom: 60px;
+}
+
+
+
+.logo{
+    width: 200px;
+    margin: auto;
+}
+/* img{
+    transform: translateX(-10%);
+} */
+
+
+
+.details{
+    display: flex;
+    flex-direction: column ;
+    margin: 20px 0;
+    text-align: center;  
+}
+
+#verify{
+    position: relative;
+    margin-left: 55%;
+    background: #04045E;
+    color: rgba(202, 240, 248, 0.9) ;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 250px;
+    font-weight: 700;
+    font-size: 20px;
+    border: 1px solid  #04045E;
+    transform: translateY(-100%);
+    
+}
+#resend{
+    position: relative;
+    background: rgba(202, 240, 248, 0.9);
+    color:  #04045E;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 250px;
+    font-weight: 700;
+    font-size: 20px;
+    border: 1px solid  #04045E;
+    transition: 0.3s ease;
+}
+.btn{
+    width: 600px;
+    margin: auto;
+}
+a>button:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+}
+#verify:hover{
+    cursor: pointer;
+    border: none;
+    transition: 0.5s ease;
+}
+
+
+
+
+
+.otp{
+    background: linear-gradient(0deg, rgba(202, 240, 248, 0.3), rgba(202, 240, 248, 0.3)), #FFFFFF;
+    
+  }
+  
+
+  input{
+
+    width:70px;
+    height:70px;
+    text-align:center;
+    background: none;
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+
+
+
+
+
+/*              for mobile screens             */
+
+
+@media screen and (max-width:500px){
+
+    body {
+        font-weight: 200;
+        font-size: 10px;
+        width: 80%;
+        margin: auto;
+    }
+    h1 {
+        font-weight: 300;
+        font-size: 20px;
+    }
+    input{
+        width: 40px;
+        height: 50px;
+        font-weight: 150;
+        font-size: 10px;
+    }
+    button{
+        width: 150px;
+        font-weight: 200;
+        font-size: 10px;
+    }
+    .logo{
+        transform: scale(0.5) ;
+    }
+    img{
+        transform: translateX(-10%);
+    }
+    #resend,#verify {
+        padding: 5px 10px;
+        border-radius: 5px;
+        width: 150px;
+        font-weight: 300;
+        font-size: 20px;
+        border: 1px solid  #04045E;
+    }
+    
+}

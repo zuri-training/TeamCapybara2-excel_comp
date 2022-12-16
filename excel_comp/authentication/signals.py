@@ -10,8 +10,8 @@ from .views import generate_otp
 
 
 def send_otp_mail(recipient,code):
-    subject = 'welcome to GFG world'
-    message = f'Hi {recipient.username}, thank you for registering in geeksforgeeks. Kindly use the below code to verify your account \n{code}'
+    subject = 'welcome to Excel_Comp '
+    message = f'Hi {recipient.username}, thank you for registering in Excel_Comp. Kindly use the below code to verify your account \n{code}'
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [recipient.email, ]
     send_mail( subject, message, email_from, recipient_list )

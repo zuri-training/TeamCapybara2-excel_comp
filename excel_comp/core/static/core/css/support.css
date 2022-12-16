@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #04045E;
+
+}
+
+
+body {
+    font-family: 'open sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#support{
+    text-align: center;
+    width: 100%;
+}
+#brand{
+    transform: scale(0.7);
+    position: absolute;
+}
+#support > h1 {
+    font-weight: 600;
+    font-size: 32px;
+    color: rgba(202, 240, 248, 0.9) ;
+    background: #04045E;
+    padding: 2% 0;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+}
+
+.details{
+    display: flex;
+    flex-direction: row-reverse;
+    /* position: absolute; */
+    /* top: 40%; */
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+}
+.form,.image{
+     width: 50%;
+}
+.image{
+   margin: 0 10%;
+   transform: scale(0.9);
+}
+input{    background: linear-gradient(0deg, rgba(202, 240, 248, 0.3), rgba(202, 240, 248, 0.3)), #FFFFFF;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 20px; 
+    margin-bottom: 20px ; 
+}
+textarea{
+    background: linear-gradient(0deg, rgba(202, 240, 248, 0.3), rgba(202, 240, 248, 0.3)), #FFFFFF;
+    width: 100%;
+    height: 40%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+button{
+    background: #04045E;
+    color: rgba(202, 240, 248, 0.9) ;
+    padding: 5px 20px;
+    border-radius: 5px;
+    width: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    transition: 0.3s ease;
+    margin: 0 25%;
+    margin-top: 15px;
+
+}
+
+button:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+
+}
+
+
+
+
+
+/*              for mobile screens             */
+
+
+@media screen and (max-width:634px){
+
+    body {
+        font-weight: 200;
+        font-size: 10px;
+    }
+    h1,h2 {
+        font-weight: 300;
+    }
+    h1{
+        font-size: 20px;
+    }
+    img {
+        transform: scale(0.5);
+    }
+
+
+}

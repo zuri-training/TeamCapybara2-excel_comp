@@ -5,20 +5,20 @@
     </div>
     <div class="right">
         <h3>Company</h3>
-        <span>About</span>
-        <span>Careers</span>
-        <span>Pricing</span>
+        <a href="{% url 'about' %}">About</a>
+        <a href="">Careers</a>
+        <a href="">Pricing</a>
     </div>
     <div class="right">
         <h3>More on Excel Comp</h3>
-        <span>Privacy Policy</span>
-        <span>Terms of Use</span>
-        <span>Cookie Policy</span>
+        <a href="{% url 'privacy' %}">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="{% url 'cookies' %}">Cookie Policy</a>
     </div>
     <div class="right">
         <h3>Support</h3>
-        <span>How it works</span>
-        <span>Help Centre</span>
-        <span>FAQ's</span>
+        <a href="{% url 'how_to_use' %}">How it works</a>
+        <a href="{% url 'support' %}">Help Centre</a>
+        <a href="">FAQ's</a>
     </div>
 </footer>

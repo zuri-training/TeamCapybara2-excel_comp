@@ -1,0 +1,229 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #04045E;
+    overflow-x: hidden;
+
+}
+ /* container logo info email button */
+
+body {
+    font-family: 'open sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: 100vw;
+    margin: auto;
+    text-align: center;
+}
+h1{
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 5% ;
+}
+
+.profile{
+    display: flex;
+    margin: 5% 10px;
+}
+.image{
+    width: 50%;
+    padding-left: 10px;
+}
+
+.details{
+   width: 60%;
+   padding: 40px 0;
+   text-align: left;
+   width: 80%;
+   margin-left: 10%;
+}
+input{
+    background: none;
+    border: none;
+    position: absolute;
+    left: 60%;
+    width: 35%;
+    justify-self: right;
+    padding-top: 4px;
+    padding-left: 50px;
+    
+}
+
+.details>a>button{
+    margin-top: 40px;
+    background: rgba(202, 240, 248, 1);
+    color: #04045E;
+    border:1px #04045E solid;
+
+}
+
+
+
+
+
+
+
+button{
+    background: #04045E;
+    color: rgba(202, 240, 248, 0.9) ;
+    border-radius: 5px;
+    font-weight: 700 ;
+    transition: 0.3s ease;
+    width: 200px;
+    font-size: 12px;
+    padding: 10px 20px;
+    margin:20px;
+}
+
+a>button:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+
+}
+.options{
+    display: flex;
+    margin-bottom: 10vh;
+}
+h2,h3{
+    text-align: left;
+    margin-left: 20px;
+}
+.options >div{
+    display: flex;
+    justify-content: space-between;
+}
+.documents{
+    width: 80%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*              for mobile screens             */
+
+
+@media screen and (max-width:500px){
+
+    body {
+        font-weight: 200;
+        font-size: 10px;
+        width: 80%;
+        margin: auto;
+    }
+    h1 {
+        font-weight: 300;
+        font-size: 20px;
+    }
+    h2,h3{
+        font-size: 15px;
+    }
+
+    button{
+        width: 150px;
+        padding: 10px 20px;
+        font-weight: 200;
+        font-size: 10px;
+    }
+    .logo{
+        transform: scale(0.5) ;
+    }
+    button{
+        width: 150px;
+        font-weight: 200;
+        font-size: 10px;
+
+    }
+    
+}
+
+
+
+@media screen and (max-width:850px){
+    
+.options >div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+button{
+    margin: 20px 0 0 20px;
+}
+
+}
+
+
+
+
+
+.upload {
+    position: relative;
+    max-width: 205px;
+    margin: 50px auto;
+  }
+  .upload .edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+  }
+  .upload .edit input {
+    display: none;
+  }
+  .upload .edit input + label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #04045E;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+  }
+  .upload .edit input + label:hover {
+    background:#04045E;
+    border-color: rgba(202, 240, 248, 0.9);
+  }
+  .upload .edit input + label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: rgba(202, 240, 248, 0.9);
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+  }
+  .upload .preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #04045E;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  .upload .preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  

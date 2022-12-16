@@ -1,21 +1,28 @@
 {% extends 'registration/base.html' %}
 
-{% block extra_css %} 
+{% load static %}
+
+{% block extra_css %}
 <style>
-    .form-container {
-        display: flex;
-        flex-direction: column;
-    }
+  .page-container {
+    padding-top: 15px;
+    height: 80vh;
+  }
+
+  .form-container {
+      display: flex;
+      flex-direction: column;
+  }
 </style>
 {% endblock %}
 
 {% block content %} 
 <main class="page-container">
-<section>
-    <div>
-      <img src="" alt="">
-    </div>
+    
     <div class="signup-box">
+      <div id="image1"> <img src="{% static 'authentication/images/Excel_Comp.png' %}"  alt=""></div>
+      <div id="ease">Duplicate with ease</div>
+      <div id="image2">  <img src="{% static 'authentication/images/vector1.png' %}"  alt=""></div>
       <form method="POST">
           {% csrf_token %}
         <div class="form-container">
@@ -25,7 +32,6 @@
             {{ form.email }}
             {{ form.password1 }}
             {{ form.password2 }}
-            {{ request.user }}
             <span class="forgot-pwd">Forgot password? <a href="#">click here</a></span>
         
             <div class="btn-box">
@@ -34,9 +40,7 @@
             </div>
         </div>
       </form>
-    
-
     </div>
-  </section>
+
 </main>
 {% endblock %}

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #04045E;
+    overflow-x: hidden;
+
+}
+ /* container logo info email button */
+
+body {
+    font-family: 'open sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: 100vw;
+    margin: auto;
+    text-align: center;
+}
+h1{
+    font-weight: 600;
+    font-size: 32px;
+    margin: 5% ;
+}
+
+.input{
+    width: 60%;
+    margin: auto;
+}
+input{
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px #04045E solid;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+}
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+
+
+
+
+
+
+
+button{
+    background: #04045E;
+    color: rgba(202, 240, 248, 0.9) ;
+    border-radius: 5px;
+    font-weight: 700 ;
+    transition: 0.3s ease;
+    width: 200px;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin:20px;
+}
+
+a>button:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+
+}

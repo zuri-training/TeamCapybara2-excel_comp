@@ -1,0 +1,82 @@
+{% extends 'core/base_file.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/about.css' %}">
+<style>
+  .page-container {
+    padding: 0 10%;
+  }
+</style>
+{% endblock %}}
+
+{% block content %}
+  <main class="page-container">
+    <div class="container">
+      <section>
+        <img src="{% static 'core/images/logo.svg' %}" alt="brand" />
+        <br />
+        <h1>TEAM CAPYBARA2 - EXCEL_<b class="comp">COMP</b></h1>
+      </section>
+
+      <div>
+        <p>
+          <b>Project Brief : </b>A platform that helps users compare the
+          contents of Excel files and perform actions on the result based on the
+          user choice.
+        </p>
+        <br /><br />
+        <h2>OVERVIEW</h2>
+        <br />
+        <p>
+          Use <b>excel_<b class="comp">comp</b></b> to compare two excel sheets
+          or files to see the differences between them.
+        </p>
+        <br /><br />
+        <h2>FEATURES</h2>
+        <br />
+        <ol>
+          <li>
+            User (Unauthenticated) <b> :</b> <br /><br />
+            <ul>
+              <li>Can visit the platform to view basic information about it</li>
+              <li>View and Interact with the documentation</li>
+              <li>
+                Register to view more details (no access until registered)
+              </li>
+              <br />
+            </ul>
+          </li>
+          <li>
+            User (authenticated)<b> :</b> <br />
+            <br />
+            <ul>
+              <li>Full access to the platform</li>
+              <li>Allow upload csv/excel file</li>
+              <li>
+                Users should get the option to<b> :</b> <br /><br />
+                <ul>
+                  <li>Highlight duplicates in a single file</li>
+                  <li>Highlight duplicates and return 2 files</li>
+                  <li>Remove duplicates and return a single file</li>
+                  <li>Remove duplicates and return 2 files</li>
+                </ul>
+              </li>
+              <li>Show usage example to users</li>
+              <li>Allow user save data and come back to download</li>
+            </ul>
+          </li>
+        </ol>
+        <br /><br /><br />
+
+        <p class="documentation">
+          <a
+            href="https://docs.google.com/document/d/1nULMLQKbRjDqWWHBwMk10m0dkM1lDWEpdwI22CI6nS4/edit?usp=sharing"
+            target="_blank"
+            ><b>DOCUMENTATION</b></a
+          >
+        </p>
+      </div>
+    </div>
+  </main>
+  {% endblock %}

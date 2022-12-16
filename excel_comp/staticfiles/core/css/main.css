@@ -163,9 +163,10 @@ footer {
     display: flex;
     flex-direction: column;
 }
-.right span {
+.right a {
     padding-top: 20px;
     font-weight: 500;
+    text-decoration: none;
 }
 
 .right h3 {

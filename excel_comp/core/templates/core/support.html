@@ -1,0 +1,53 @@
+{% extends 'core/base_file.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/support.css' %}">
+<style>
+  .page-container {
+    padding: 0;
+    height: 100vh;
+  }
+  .head {
+    display: flex;
+    justify-content: center;
+    flex-direction: column ;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+  <main class="page-container">
+    <div class="container">
+      <div id="support"><h1>Support</h1></div>
+      <div id="head">
+        <div id="image1"> <img src="{% static 'authentication/images/Excel_Comp.png' %}"  alt=""></div>
+        <div id="ease">Duplicate with ease</div>
+        <div id="image2">  <img src="{% static 'authentication/images/vector1.png' %}"  alt=""></div>
+    </div>
+      <div class="details">
+        <div class="form">
+          <form action="submit" method="post">
+            <label for="name">Name</label><br />
+            <input type="text" required /><br />
+            <label for="email">Email address</label><br />
+            <input type="email" name="email" id="email" required /><br />
+            <label for="complaint">Enter complaint</label><br />
+            <textarea
+              name="complaint"
+              id="complaint"
+              cols="30"
+              rows="10"
+              required
+            ></textarea
+            ><br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="image">
+          <a href="#"><img src="{% static 'core/images/image1.svg' %}" alt="" /></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  {% endblock %}

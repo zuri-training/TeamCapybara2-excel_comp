@@ -1,0 +1,54 @@
+{% extends 'core/base_file.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/how_to_use.css' %}">
+<style>
+  .page-container {
+    padding: 0 10%;
+  }
+</style>
+{% endblock %}}
+
+{% block content %}
+  <main class="page-container">
+    <div class="container">
+      <section><h1>HOW TO USE</h1></section>
+      <div class="details">
+        <h2>Introduction</h2>
+        <p>
+          Thank you for choosing Excel_Comp. This guide will provide step by
+          step instructions on how t use our platform and to get the most out of
+          it
+        </p>
+      </div>
+      <div class="details">
+        <h2>Sign-up / Register</h2>
+        <ol>
+          <li>Go to the sign- up and enter your details</li>
+          <li>Check your email and authenticate your account</li>
+          <li>Sign-in to us the platform</li>
+        </ol>
+      </div>
+      <div class="details">
+        <h2>How to use</h2>
+        <ol>
+          <li>Go to the file upload page.</li>
+          <li>
+            Drag your document or click browse and upload your document on the
+            squared space.
+          </li>
+          <li>Click on compare to compare the information in your document.</li>
+          <li>
+            View the results and click the download option to save the document
+            on your device.
+          </li>
+          <li>
+            All documents are automatically saved in the system and can be
+            viewed in the history tab of your profile.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </main>
+  {% endblock %}

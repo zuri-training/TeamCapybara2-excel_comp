@@ -1,0 +1,49 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'authentication/css/auth.css' %}">
+<style>
+  .page-container {
+    padding-top: 0;
+    height: 100vh;
+  }
+  .heads {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+</style>
+{% endblock %} 
+  {% block content %} 
+  <main class="page-container">
+    <div class="container">
+      <div class="details">
+        <div id="image1"> <img src="{% static 'authentication/images/Excel_Comp.png' %}"  alt=""></div>
+        <div id="ease">Duplicate with ease</div>
+        <div id="image2">  <img src="{% static 'authentication/images/vector1.png' %}"  alt=""></div>
+        <h1>
+          Enter your Email address <br />
+          to request authorization <br />
+          code
+        </h1>
+        <p>Make sure your phone is near you</p>
+        <form method="post">
+          {% csrf_token %} 
+          
+          <div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter Email Address"
+            required
+          />
+        </div>
+          <button class="request">Request code</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}
