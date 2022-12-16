@@ -35,7 +35,7 @@
             <input
               class="otp"
               type="text"
-              id="otp1"
+              name="otp1"
               oninput="digitValidate(this)"
               onkeyup="tabChange(1)"
               maxlength="1"
@@ -43,7 +43,7 @@
             <input
               class="otp"
               type="text"
-              id="otp2"
+              name="otp2"
               oninput="digitValidate(this)"
               onkeyup="tabChange(2)"
               maxlength="1"
@@ -51,7 +51,7 @@
             <input
               class="otp"
               type="text"
-              id="otp3"
+              name="otp3"
               oninput="digitValidate(this)"
               onkeyup="tabChange(3)"
               maxlength="1"
@@ -59,14 +59,14 @@
             <input
               class="otp"
               type="text"
-              id="otp4"
+              name="otp4"
               oninput="digitValidate(this)"
               onkeyup="tabChange(4)"
               maxlength="1"
             />
             <input
               class="otp"
-              id="otp5"
+              name="otp5"
               type="text"
               oninput="digitValidate(this)"
               onkeyup="tabChange(5)"
@@ -75,7 +75,7 @@
             <input
               class="otp"
               type="text"
-              id="otp6"
+              name="otp6"
               oninput="digitValidate(this)"
               onkeyup="tabChange(6)"
               maxlength="1"
@@ -86,35 +86,17 @@
         </div>
 
         <div class="btn">
-          <a href="#" id="resend">Resend Code</a>
+          <a href="{% url 'confirm' %}" id="resend">Resend Code</a>
           <button id="verify">Verify code</button>
         </div>
       </form>
     </div>
 </main>
-  <script src="otp.js"></script>
 {% endblock %}
 
 {% block extra_script %} 
 <script>
-  $('#otp-form').submit(function() {
-    const t1 = $('#otp1').value
-    const t2 = $('#otp2').value
-    const t3 = $('#otp3').value
-    const t4 = $('#otp4').value
-    const t5 = $('#otp5').value
-    const t6 = $('#otp6').value
-
-    let res = t1 + t2+t3+t4+t5+t6
-    
-    let result = document.getElementsByName('user_otp')
-    result.value = res
-
-    return true
-    
-  })
-  let otp1 = document.getElementsByName
-
+  
   let digitValidate = function(ele){
     console.log(ele.value);
     ele.value = ele.value.replace(/[^0-9]/,'');

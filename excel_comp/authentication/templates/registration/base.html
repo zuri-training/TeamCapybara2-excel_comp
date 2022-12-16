@@ -47,9 +47,15 @@
         brand.addEventListener("mouseover", (event) => {
           drop.classList.add("hover");
         });
-        container.addEventListener("mouseover", (event) => {
-          drop.classList.remove("hover");
-        });
+        // container.addEventListener("mouseover", (event) => {
+        //   drop.classList.remove("hover");
+        // });
+
+        window.onmouseover = function(event)  {
+            if (event.target == container) {
+                drop.style.display = "none";
+            }
+        }
       </script>
     {% endif %}
 </body>

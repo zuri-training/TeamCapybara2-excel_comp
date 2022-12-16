@@ -14,6 +14,13 @@ from authentication.forms import UserRegistrationForm
 import random
 import string
 
+def process_otp(input):
+    result = ""
+    for i in range(1,7):
+        result += input[f"otp{i}"]
+    return result
+
+
 def send_otp_mail(recipient,code):
     subject = 'welcome to Excel_Comp '
     message = f'Hi {recipient.username}, thank you for registering in Excel_Comp. Kindly use the below code to verify your account \n{code}'
@@ -65,8 +72,8 @@ class AccountValidationView(generic.View):
         return render(request,self.template_name)
 
     def post(self,request,*args,**kwargs):
-        otp = request.POST.get('user_otp')
-        print(otp)
+        input = request.POST.dict()
+        otp = process_otp(input)
         user = request.user.id
         if validate_otp(user,otp):
             return HttpResponseRedirect(reverse('dashboard'))
@@ -88,6 +95,7 @@ class RequestAuthenticationView(generic.View):
             send_otp_mail(email,code)
             return HttpResponseRedirect(reverse('verify_account'))
         return render(request,self.template_name)
+
 
 
 class LoginView(generic.View):

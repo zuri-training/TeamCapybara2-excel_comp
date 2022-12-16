@@ -1,7 +1,6 @@
 {% load static %}
 <header>
       <div>
-}
         <button class="nav-icon" id="add">&#9776;</button>
         <img src="{% static 'authentication/images/brand.svg' %}" alt="brand" id="brand" />
       </div>
@@ -15,11 +14,11 @@
       </div>
 </header>
     <div class="log" id="dropdown">
-      <a href="#"> Logout</a>
+      <a href="{% url 'logout' %}"> Logout</a>
     </div>
 
     <!-- put content in container to activate the remove the logout dropdown -->
-    <div id="container"></div>
+    
     <div class="nav" id="navbar">
       <div class="logo">
         <div>
