@@ -84,8 +84,9 @@ class AccountValidationView(generic.View):
 
 def resend_otp(request):
     email = request.user.email
+    user = get_object_or_404(User,email=email)
     code = generate_otp()
-    send_otp_mail(email,code)
+    send_otp_mail(user,code)
     return True
     
 class RequestAuthenticationView(generic.View):
