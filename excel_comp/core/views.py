@@ -10,20 +10,20 @@ import pandas as pd
 import json
 import os
 import xlsxwriter
-from openpyxl import Workbook
-from openpyxl.styles import Font, Color, colors, fills
-from openpyxl.utils.dataframe import dataframe_to_rows
+# from openpyxl import Workbook
+# from openpyxl.styles import Font, Color, colors, fills
+# from openpyxl.utils.dataframe import dataframe_to_rows
 
-def highlight_duplicate(dataframe,duplicates,filename):
-    wb = Workbook()
-    ws = wb.active
+# def highlight_duplicate(dataframe,duplicates,filename):
+#     wb = Workbook()
+#     ws = wb.active
 
-    for row_index in duplicates:
-        row = ws.row_dimensions[row_index]
-        row.fill = fills.PatternFill(patternType='solid', fgColor=Color(rgb='00FF00'))
+#     for row_index in duplicates:
+#         row = ws.row_dimensions[row_index]
+#         row.fill = fills.PatternFill(patternType='solid', fgColor=Color(rgb='00FF00'))
     
-    wb.save(f"processed_files/{filename}.xlsx")
-    return filename
+#     wb.save(f"processed_files/{filename}.xlsx")
+#     return filename
 
 
 
