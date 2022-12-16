@@ -65,7 +65,8 @@ class AccountValidationView(generic.View):
         return render(request,self.template_name)
 
     def post(self,request,*args,**kwargs):
-        otp = request.POST.get('otp')
+        otp = request.POST.get('user_otp')
+        print(otp)
         user = request.user.id
         if validate_otp(user,otp):
             return HttpResponseRedirect(reverse('dashboard'))
