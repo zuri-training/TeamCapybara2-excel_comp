@@ -36,7 +36,7 @@ class HomepageView(generic.View):
 
         return render(request,self.template_name)
 
-class DashboardView(LoginRequiredMixin,CheckVerificationMixin,generic.View):
+class DashboardView(generic.View):
     template_name = 'core/dashboard.html'
     redirect_url = reverse_lazy('confirm')
 

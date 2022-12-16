@@ -32,9 +32,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '*',
+    'https://excelcomprun.up.railway.app/',
+    'localhost:8000',
+    '127.0.0.1:8000',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://excelcomprun.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://excelcomprun.up.railway.app']
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'login'
