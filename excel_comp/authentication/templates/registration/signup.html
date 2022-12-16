@@ -19,10 +19,8 @@
 {% block content %} 
 <main class="page-container">
   {% for field in form %}
-  <div class="fieldWrapper">
-      {{ field.errors }}
-  </div>
-{% endfor %}
+    <span>{{ field.errors }}</span>  
+  {% endfor %}
     <div class="signup-box">
       <div id="image1"> <img src="{% static 'authentication/images/Excel_Comp.png' %}"  alt=""></div>
       <div id="ease">Duplicate with ease</div>
